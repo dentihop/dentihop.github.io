@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>Hygiène et soins bucco-dentaires</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Generic Dentihop stylesheet with font -->
+    <link href="assets/css/dentihop.css" rel="stylesheet">
+
+    <style>
+      .menu-item{
+          margin-top: 5%;
+          margin-left: 5%;
+          margin-right: 5%;
+          padding: 5%;
+          border-color: #fff;
+          border-style: solid;
+          border-width: 2px;
+          border-radius: 5px;
+          color: #fff;
+          font-size: 1em;
+          height: 25%;
+      }
+      a{
+          text-decoration: none !important;
+      }
+      picto{
+          height: 70%;
+      }
+    </style>
+    <!-- Custom styles for this template -->
+  </head>
+  <body style="background-color: #1fa97d">
+
+<main role="main">
+
+    <div class="container" style="height: 100vh">
+
+      <a href="leo_va_chez_le_dentiste.html">
+        <div class="row menu-item">
+          <div class="col-5">
+              <img style="height:80%" src="assets/images/logo_bord_rose.png">
+          </div>
+          <div class="col-7">
+              <h5>Vidéo pédagogique&nbsp;: Léo va chez le dentiste</h5>
+          </div>
+        </div>
+      </a>
+
+      <a href="hygiene_bucco_dentaire.html">
+        <div class="row menu-item">
+          <div class="col-5">
+              <img style="height:80%" src="assets/images/logo_bord_bleu.png">
+          </div>
+          <div class="col-7">
+              <h5>Hygiène bucco-dentaire à la maison</h5>
+          </div>
+        </div>
+      </a>
+
+      <a href="soins_au_cabinet.html">
+        <div class="row menu-item">
+          <div class="col-5">
+              <img style="height:80%" src="assets/images/logo_bord_jaune.png">
+          </div>
+          <div class="col-7">
+              <h5>Soins au cabinet dentaire</h5>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+</main>
+
+
+
+<script>
+window.onload = function(){
+    var w = window.innerWidth,
+        fontSize = parseInt(Math.sqrt(w)) + "px"
+    for(const item of document.querySelectorAll(".col-7")){
+        //item.style.fontSize = fontSize
+    }
+}
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,9 @@
+@font-face{
+    font-family: "geo_sans_light";
+    src: url("../fonts/GeosansLight.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal
+}
+body, td{
+    font-family: "geo_sans_light";
+}
