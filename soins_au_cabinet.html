@@ -6,13 +6,14 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hygiène et soins bucco-dentaires</title>
+    <title>Soins au cabinet dentaire</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Generic Dentihop stylesheet with font -->
+    <link href="assets/css/dentihop.css" rel="stylesheet">
 
     <style>
       a{
@@ -20,36 +21,36 @@
       }
       .dentihop-header{
           background-color: #eac928;
-          color: white;
+          color: #000;
           display: flex;
           align-items: center;
+          font-size: 1.3em;
       }
       .zone{
         margin-top: 5%;
         padding-left: 10%;
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+
   </head>
   <body style="background-color: #fff">
 
      <header>
-  <div class="navbar dentihop-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-3">
-          <a href="menu.html" class="navbar-brand d-flex align-items-center">
-            <img class="image-fluid" width="100%" src="assets/images/logo-noir.png">
-          </a>
-        </div>
-        <div class="col-7">
-          Soins au cabinet dentaire
+      <div class="navbar dentihop-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <a href="menu.html" class="navbar-brand d-flex align-items-center">
+                <img class="image-fluid" width="100%" src="assets/images/logo-noir.png">
+              </a>
+            </div>
+            <div class="col-7">
+              Soins au cabinet dentaire
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</header>
+    </header>
 
 <main role="main">
 
@@ -57,7 +58,7 @@
 
         <div class="row zone">
           <div class="col">
-            1ère consultation
+            <a href="premiere_consultation.html">1ère consultation</a>
           </div>
         </div>
 
@@ -83,7 +84,7 @@
         </div>
         <div class="row zone">
           <div class="col">
-            Pour les extractions
+            <a href="extractions.html">Pour les extractions</a>
           </div>
         </div>
 
@@ -92,21 +93,6 @@
 
 </main>
 
-
-
-<script>
-window.onload = function(){
-    var w = window.innerWidth,
-        headerFontSize = parseInt(w * 0.06) + "px",
-        itemsFontSize = parseInt(w * 0.07) + "px"
-    for(const item of document.querySelectorAll(".col-7")){
-        item.style.fontSize = headerFontSize
-    }
-    for(const item of document.querySelectorAll(".col")){
-        item.style.fontSize = itemsFontSize
-    }
-}
-</script>
 </body>
 </html>
 

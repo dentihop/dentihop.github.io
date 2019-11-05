@@ -6,75 +6,50 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hygiène et soins bucco-dentaires</title>
+    <title>Première consultation</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Bootstrap core CSS -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Generic Dentihop stylesheet with font -->
     <link href="assets/css/dentihop.css" rel="stylesheet">
 
-
     <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
+      a{
+          text-decoration: none !important;
       }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      .dentihop-header{
+          background-color: #eac928;
+          color: #000;
+          display: flex;
+          align-items: center;
+          font-size: 1.3em;
       }
-
-      table th{
-        text-align: center;
-      }
-      table td{
-        text-align: center;
+      .zone{
+        margin-top: 5%;
+        padding-left: 10%;
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+
   </head>
   <body>
-    <header>
-  <div class="collapse bg-dark" id="navbarHeader">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-md-7 py-4">
-          <h4 class="text-white">A propos</h4>
-          <p class="text-muted">Cette application permet aux patients atteints de troubles de spectre autistique de se familiariser avec l'hygiène et les soins bucco-dentaires. </p>
-        </div>
-        <div class="col-sm-4 offset-md-1 py-4">
-          <h4 class="text-white">Contact</h4>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Suivre sur Twitter</a></li>
-            <li><a href="#" class="text-white">Liker sur Facebook</a></li>
-            <li><a href="#" class="text-white">Mail</a></li>
-          </ul>
+     <header>
+      <div class="navbar dentihop-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <a href="menu.html" class="navbar-brand d-flex align-items-center">
+                <img class="image-fluid" width="100%" src="assets/images/logo-noir.png">
+              </a>
+            </div>
+            <div class="col-7">
+              Première consultation
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="navbar navbar-dark bg-dark shadow-sm">
-    <div class="container d-flex justify-content-between">
-      <a href="index.html" class="navbar-brand d-flex align-items-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        <strong>Hygiène et soins bucco-dentaires</strong>
-      </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
-  </div>
-</header>
+    </header>
 
 <main role="main">
 
@@ -89,51 +64,30 @@
     <div class="container">
 
       <div class="row">
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col"><big>Avec quoi ?</big></th>
-              <th scope="col"><big>Ca ressemble à quoi ?</big></th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>
-                <img src="assets/images/gants_dentiste.jpg" width="80%">
-                <p class="card-text">des gants</p>
-              </td>
-              <td>
-                <img src="assets/images/gants_enfant.jpg" width="80%">
-                <p class="card-text">des gants</p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <img src="assets/images/masque_dentiste.jpg" width="80%">
-                <p class="card-text">un masque</p>
-              </td>
-              <td>
-                <img src="assets/images/masque_carnaval.jpg" width="80%">
-                <p class="card-text">un masque de carnaval</p>
-              </td>
-            </tr>
-
-            <tr>
-              <td>
-                <img src="assets/images/sonde_dentiste.jpg" width="80%">
-                <p class="card-text">une sonde</p>
-              </td>
-              <td>
-                <img src="assets/images/crayon.jpg" width="80%">
-                <p class="card-text">un crayon</p>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="col-6">Avec quoi ?</div>
+        <div class="col-6">Ca ressemble à quoi ?</div>
       </div>
+
+      <div class="row">
+        <div class="col-6">
+          un miroir<br>
+          <img width="40%" src="assets/images/premiere_consultation/miroir-1ereconsult.png">
+        </div>
+        <div class="col-6">
+          <img class="img-fluid" src="assets/images/premiere_consultation/miroir.jpg">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          une précelle<br>
+          <img width="40%" src="assets/images/premiere_consultation/pre-celle-1ereconsult.png">
+        </div>
+        <div class="col-6">
+          <img class="img-fluid" src="assets/images/premiere_consultation/precelle.jpeg">
+        </div>
+      </div>
+
     </div>
   </div>
 
