@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hygiène et soins bucco-dentaires</title>
+    <title>Denti'hop</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -16,8 +16,11 @@
     <!-- Generic Dentihop stylesheet with font -->
     <link href="assets/css/dentihop.css" rel="stylesheet">
 
-
     <style>
+      body{
+        background-color: #fff;
+      }
+
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -41,32 +44,66 @@
           color: #00a074;
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+
+  <link rel="manifest" href="manifest.json">
+
   </head>
   <body>
 
 <main role="main">
 
-
-
     <div class="container">
 
       <div class="row">
         <div class="col-sm" style="text-align: center; padding-top: 20%">
-          <a href="menu.html">
+          <a href="menu.html" id="main_link">
             <img width="70%" src="assets/images/logo_sans_texte.jpg">
             <br>
             <h1 class="title">DENTI'HOP</h1>
           </a>
         </div>
-
       </div>
-    </div>
 
+      <div class="row">
+        <div class="col" style="text-align: center;">
+          <h3>Navigation par</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col" style="text-align: center;">
+          <h4>dessins</h4>
+          <a href="menu.html?navig=dessins">
+            <img src="assets/images/premiere_consultation/miroir-1ereconsult.png"
+               width="30%" style="background-color: #888;padding:10px;transform:rotate(-0.25turn);">
+          </a>
+        </div>
+        <div class="col" style="text-align: center">
+            <h4>photos</h4>
+            <a href="menu.html?navig=photos">
+              <img src="assets/images/premiere_consultation/miroir.jpg" width="55%"
+                 style="padding: 10px;" id="photos">
+          </a>
+        </div>
+      </div>
+
+    </div>
 
 </main>
 
+<script>
+// If cookie "navig" is set, use it in the link on main picture
+var cookies = document.cookie.split(";"),
+    key,
+    value
 
+for(const cookie of cookies){
+    [key, value] = cookie.split("=")
+    if(key == "navig"){
+        document.getElementById("main_link").href = "menu.html?navig=" + value
+    }
+}
+
+</script>
 </body>
 </html>

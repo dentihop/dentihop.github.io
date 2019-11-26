@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hygiène et soins bucco-dentaires</title>
+    <title>Denti'hop</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
@@ -17,8 +17,12 @@
     <link href="assets/css/dentihop.css" rel="stylesheet">
 
     <style>
+      body{
+        background-color: #1fa97d;
+      }
+
       .menu-item{
-          margin-top: 5%;
+          margin-bottom: 5%;
           margin-left: 5%;
           margin-right: 5%;
           padding-top: 10%;
@@ -33,6 +37,7 @@
       }
       a{
           text-decoration: none !important;
+          color: #000;
       }
       picto{
           height: 70%;
@@ -40,16 +45,24 @@
     </style>
     <!-- Custom styles for this template -->
   </head>
-  <body style="background-color: #1fa97d">
+  <body>
 
 <main role="main">
 
     <div class="container" style="height: 100vh">
 
+        <div class="row" style="padding: 0px">
+          <div class="col">
+            <a href="index.html">
+              <h1><</h1>
+            </a>
+          </div>
+        </div>
+
       <a href="leo_va_chez_le_dentiste.html">
         <div class="row menu-item">
           <div class="col-5">
-              <img style="height:20%" src="assets/images/logo-rose.png">
+              <img style="width:60%" src="assets/images/logo-rose.png">
           </div>
           <div class="col-7">
               <h5>Vidéo pédagogique&nbsp;: Léo va chez le dentiste</h5>
@@ -60,7 +73,7 @@
       <a href="hygiene_bucco_dentaire.html">
         <div class="row menu-item">
           <div class="col-5">
-              <img style="height:20%" src="assets/images/logo-bleu.png">
+              <img style="width:60%" src="assets/images/logo-bleu.png">
           </div>
           <div class="col-7">
               <h5>Hygiène bucco-dentaire à la maison</h5>
@@ -71,7 +84,7 @@
       <a href="soins_au_cabinet.html">
         <div class="row menu-item">
           <div class="col-5">
-              <img style="height:20%" src="assets/images/logo-jaune.png">
+              <img style="width:60%" src="assets/images/logo-jaune.png">
           </div>
           <div class="col-7">
               <h5>Soins au cabinet dentaire</h5>
@@ -83,6 +96,20 @@
 
 </main>
 
+<script>
+// If "navig" is set in href, set cookie
+var href = window.location.href,
+    qs = href.split("?")[1]
+if(qs){
+    var key, value
+    for(const item of qs.split("&")){
+        [key, value] = item.split("=")
+        if(key == "navig"){
+            document.cookie = "navig=" + value
+        }
+    }
+}
+</script>
 
 </body>
 </html>
