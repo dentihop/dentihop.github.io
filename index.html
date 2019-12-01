@@ -73,15 +73,15 @@
       <div class="row">
         <div class="col" style="text-align: center;">
           <h4>dessins</h4>
-          <a href="menu.html?navig=dessins">
-            <img src="assets/images/premiere_consultation/miroir-1ereconsult.png"
+          <a href="menu.html?navig=picto">
+            <img src="assets/images/premiere_consultation/miroir-picto.png"
                width="30%" style="background-color: #888;padding:10px;transform:rotate(-0.25turn);">
           </a>
         </div>
         <div class="col" style="text-align: center">
             <h4>photos</h4>
-            <a href="menu.html?navig=photos">
-              <img src="assets/images/premiere_consultation/miroir.jpg" width="55%"
+            <a href="menu.html?navig=photo">
+              <img src="assets/images/premiere_consultation/miroir-photo.jpg" width="55%"
                  style="padding: 10px;" id="photos">
           </a>
         </div>
@@ -91,17 +91,12 @@
 
 </main>
 
+<script src="assets/js/dentihop.js"></script>
 <script>
 // If cookie "navig" is set, use it in the link on main picture
-var cookies = document.cookie.split(";"),
-    key,
-    value
-
-for(const cookie of cookies){
-    [key, value] = cookie.split("=")
-    if(key == "navig"){
-        document.getElementById("main_link").href = "menu.html?navig=" + value
-    }
+var navig = navig_mode()
+if(navig){
+    document.getElementById("main_link").href = "menu.html?navig=" + navig
 }
 
 </script>
