@@ -175,6 +175,6 @@ class CompressedHandler(CGIHTTPRequestHandler):
 # IP 2a01:cb08:8f80:ed00:55b2:a195:cfad:5e75
 test(HandlerClass=CompressedHandler,
      ServerClass=socketserver.ThreadingTCPServer,
-     port=8000,
+     port=8002,
      bind='192.168.1.37')
 
