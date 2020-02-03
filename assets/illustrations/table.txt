@@ -1,0 +1,162 @@
+Avulsion\photographies:[
+    ['anesthésie.JPG', 'metaphore/pompe a velo.jpg'],
+    ['compresse.JPG', 'metaphore/pansement.png'],
+    ['curette.JPG', 'metaphore/cuillère.jpg'],
+    ['suture.JPG', 'metaphore/couture.jpg'],
+    ['syndesmotome.JPG', 'metaphore/stylo plume métaphore syndesmotome.jpg']
+]
+Avulsion\pictogrammes:[
+    ['compresses.jpg', 'métaphores/Pansement.jpg']
+]
+
+Carie\photographies:[
+    ['anesthésie .JPG', 'métaphores/pompe a velo.jpg'],
+    ['Composite.png', 'métaphores/peinture.jpg'],
+    ['fraise boule montée sur contre-angle.JPG', 'métaphores/tractopelle.jpg'],
+    ['fraise boule montée sur turbine.JPG', 'métaphores/pommeau de douche.jpg'],
+    ['lampe à photopolymériser.JPG', 'métaphores/lampe bleue .png'],
+    ['spatule.JPG', 'métaphores/pinceau comme micro-brosse (dans soin de carie).jpg']
+]
+
+Carie\pictogrammes:[
+    ['anestheėsie.pdf', 'métaphores/pompeaĚveělo.pdf'],
+    ['contre-angle.jpg', 'métaphores/tractopelle.jpg'],
+    ['Turbine.pdf', 'métaphores/parapluie.pdf']
+]
+
+Detartrage:[]
+Detartrage\photographies:[
+    ['aspiration.JPG', 'métaphores/bisou.png'],
+    ['Contre-angle et brossette.JPG', 'métaphores/brosse a dent.jpg'],
+    ['Detartreur.JPG', 'métaphores/pommeau de douche.jpg']
+]
+
+Detartrage\pictogrammes:[
+    ['deětartreur.jpg', 'métaphores/brosseaÌdent.jpg'],
+    ['contre-angle.jpg', 'métaphores/pommeaudedouche.jpg']
+]
+
+Empreinte\photographies:[
+    ['porte-empreinte.JPG', 'métaphores/moule à gateau.png']
+]
+
+Empreinte\pictogrammes:[
+    ['empreinte.jpg', 'métaphores/moule a gateau.jpg']
+]
+
+Hygiène bucco-dentaire\photographies:[
+    ['brosse a dent.jpg', 'métaphores/brosse à cheveux.jpg'],
+    ['dentifrice copie.JPG', 'métaphores/fraise .jpg']
+]
+
+Hygiène bucco-dentaire\pictogrammes:[
+    ['brosseaÌdent.jpg', 'métaphores/brosseaÌcheveux.jpg'
+    ['dentifrice.jpg', 'métaphores/fraise.jpg']
+]
+
+MEOPA\photographies:[
+    ['bouteille MEOPA.JPG', 'métaphores/rire (métaphore bouteille gaz).jpg'],
+    ['masque et ballon MEOPA.png', 'métaphores/ourson masque et ballon (métaphore masque et ballon).jpg'],
+    ['masque Meopa1.JPG', 'métaphores/masque tuba plongée (métaphore masque Meopa1).png']
+]
+
+MEOPA\pictogrammes:[
+]
+
+Première consultation\photographies:[
+    ['aspiration.JPG', 'metaphores/bisou.png'],
+    ['fauteuil.jpg', 'metaphores/manège métaphore fauteuil (premiere consultation).jpg'],
+    ['Miroir copie.JPG', 'metaphores/miroir métaphore.jpg'],
+    ['Précelles.JPG', 'metaphores/pince.jpg'],
+    ['scialytique.jpg', 'metaphores/soleil.jpg'],
+    ['sonde 6.JPG', 'metaphores/crayon métaphore sonde (premiere consultation).jpg'],
+    ['soufflette.jpg', 'metaphores/vent métaphore pour souflette.jpg'],
+    ['émetteur radiologie.JPG', 'metaphores/appareil photo.jpg']
+]
+
+Première consultation\pictogrammes:[
+    ['miroir-soinspréventions.png', 'métaphores/miroir.pdf'],
+    ['preěcelle-1ereconsult.png', 'métaphores/pinceaĚlinge.pdf'],
+    ['scialytique.jpg', 'métaphores/soleil.jpg']
+]
+
+Prophylaxie\photographies:[
+    'Contre-angle et brossette.JPG', 'métaphores/brosse a dent.jpg',
+    'Micro-brosses.png', 'métaphores/pinceau métaphore microbrosse.jpg',
+    'soufflette.jpg', 'métaphores/vent métaphore pour souflette.jpg'
+    'vernis fluoré.JPG', 'métaphores/banane métaphore vernis.jpg',
+]
+
+Prophylaxie\pictogrammes:[
+    ['contre-angle.jpg', 'métaphores/brosseadent.jpg'],
+    ['souflette.pdf', 'métaphores/nuagevent.pdf']
+]
+
+
+inutilisés
+Avulsion\photographies:[
+    'davier.JPG',
+    'élévateur.JPG'
+]
+Avulsion\photographies\metaphore:[
+    'petit-ourson-et-des-pansements.jpg'
+]
+Avulsion\pictogrammes:[
+    'compresses1.jpg'
+]
+
+Carie\photographies:[
+    'acide orthophosphorique.JPG'
+]
+Carie\photographies\métaphores:[
+    'lampe bleue.png',
+    'parapluie2.jpg',
+    'plume métaphore coton (dans soins de carie).jpg',
+    'savon.jpg'
+]
+
+Carie\pictogrammes:[
+    'contreangle.jpg',
+]
+
+Detartrage\pictogrammes:[
+    'détratreur.jpg'
+]
+
+Empreinte\photographies\métaphores:[
+    'moule à gateau.jpg'
+]
+
+Empreinte\pictogrammes:[
+    'porte-empreinte.jpg'
+]
+
+Hygiène bucco-dentaire\pictogrammes:[
+    'brosseàdent.jpg'
+]
+
+MEOPA\pictogrammes\métaphore:[
+    'masquedeplongeģe.pdf'
+]
+
+Première consultation\photographies:[
+    'capteur radio.JPG',
+    'dentiste_ assisante.jpg'
+]
+
+Première consultation\photographies\metaphores:[
+    'gant.jpg',
+    'miroir.jpg',
+]
+
+Première consultation\pictogrammes:[
+    'Dentiste\xa0et assistante\xa0masque gant .png',
+    'Fauteuil.png',
+]
+
+Prophylaxie\pictogrammes\métaphores:[
+    'dentifrice.jpg',
+    'pinceau.pdf'
+]
+
+

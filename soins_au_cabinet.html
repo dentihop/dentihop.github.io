@@ -10,10 +10,13 @@
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
-    <!-- Bootstrap core CSS -->
+    <!-- Feuille de style Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Generic Dentihop stylesheet with font -->
+    <!-- Feuille de style Dentihop avec fonte -->
     <link href="assets/css/dentihop.css" rel="stylesheet">
+
+    <!-- Tables de correspondance pour illustrations -->
+    <script src="/assets/illustrations/table.js"></script>
 
     <style>
       a{
@@ -45,7 +48,7 @@
                 <img class="image-fluid" width="80%" src="assets/images/logo-noir.png">
               </a>
             </div>
-            <div class="col-7">
+            <div class="col-7" id="title">
               Soins au cabinet dentaire
             </div>
           </div>
@@ -53,63 +56,106 @@
       </div>
     </header>
 
-<main role="main">
-
-    <div class="container" style="margin-top: 5%">
-
-        <div class="row zone">
-          <div class="col">
-            <a href="premiere_consultation.html">
-              Première consultation
-            </a>
-          </div>
-        </div>
-
-        <div class="row zone">
-          <div class="col">
-            <a href="prevention.html">
-              Prevention
-            </a>
-          </div>
-        </div>
-        <div class="row zone">
-          <div class="col">
-            <a href="detartrage.html">
-              Détartrage
-            </a>
-          </div>
-        </div>
-        <div class="row zone">
-          <div class="col">
-            <a href="carie.html">
-              Carie
-            </a>
-          </div>
-        </div>
-        <div class="row zone">
-          <div class="col">
-            <a href="empreinte.html">
-              Empreinte
-            </a>
-          </div>
-        </div>
-        <div class="row zone">
-          <div class="col">
-            <a href="extractions.html">
-              Extraction
-            </a>
-          </div>
-        </div>
-        <div class="row zone">
-          <div class="col">
-            Meopa
-          </div>
-        </div>
-
-      </div>
-
+<main role="main" id="main">
 
 </main>
+
+<script src="assets/js/dentihop.js"></script>
+
+<script>
+var url = window.location.href,
+    elts = url.split("?"),
+    main = document.getElementById("main")
+
+if(elts.length == 1){
+  // menu principal
+  for(var item in table){
+      var lib = table[item].lib || item
+      var zone = document.createElement("div")
+      zone.setAttribute("class", "row zone")
+      var col = document.createElement("div")
+      col.setAttribute("class", "col")
+      var link = document.createElement("a")
+      var text = document.createTextNode(lib)
+      link.appendChild(text)
+      link.setAttribute("href", "?" + item)
+      col.appendChild(link)
+      zone.appendChild(col)
+      main.appendChild(zone)
+  }
+}else{
+  // sous-menu
+
+  // Ecrit le titre
+  var item = elts[1],
+      lib = table[item].lib || item,
+      text = document.createTextNode(lib)
+  document.getElementById("title").innerText = lib
+
+  // Crée la zone de rendu
+  var album = document.createElement("div")
+  album.setAttribute("class", "album bg-light")
+  main.appendChild(album)
+
+  // Crée le conteneur
+  var container = document.createElement("div")
+  container.setAttribute("class", "container")
+  album.appendChild(container)
+
+  // Zone d'explication
+  var expl = document.createElement("div")
+  expl.setAttribute("class", "row")
+  main.appendChild(expl)
+  for(const text of ["Avec quoi ?", "Ca ressemble à quoi ?"]){
+    var cell = document.createElement("div")
+    cell.setAttribute("class", "col-6")
+    cell.appendChild(document.createTextNode(text))
+    expl.appendChild(cell)
+  }
+
+  // Mode de navigation (picto ou photo) d'après le cookie
+  var navig = navig_mode() || "photo",
+      dossier1 = table[item].dossier || item,
+      dossier2 = navig == "photo" ? "photographies" : "pictogrammes",
+      dossier = dossier1 + "/" + dossier2,
+      fichiers = table[item][dossier2],
+      libelle,
+      vrai,
+      meta
+
+  // Images
+  for(const fichier of fichiers){
+      [libelle, vrai, meta] = fichier
+      var row = document.createElement("div")
+      row.setAttribute("class", "row")
+      main.appendChild(row)
+
+      // colonne de gauche : vraie image / picto
+      var col1 = document.createElement("div")
+      col1.setAttribute("class", "col-6")
+      row.appendChild(col1)
+      col1.appendChild(document.createTextNode(libelle))
+      col1.appendChild(document.createElement("br"))
+      var img_vrai = document.createElement("img")
+      img_vrai.setAttribute("width", "80%")
+      img_vrai.setAttribute("src", "/assets/illustrations/" + dossier +
+          "/" + vrai)
+      col1.appendChild(img_vrai)
+
+      // colonne de droite : métaphore
+      var col2 = document.createElement("div")
+      col2.setAttribute("class", "col-6")
+      row.appendChild(col2)
+      col2.appendChild(document.createTextNode("métaphore " + libelle))
+      col2.appendChild(document.createElement("br"))
+      var img_meta = document.createElement("img")
+      img_meta.setAttribute("width", "80%")
+      img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
+          "/" + meta)
+      col2.appendChild(img_meta)
+  }
+}
+</script>
 
 </body>
 </html>
