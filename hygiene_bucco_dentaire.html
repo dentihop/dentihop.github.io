@@ -6,31 +6,35 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Hygiène et soins bucco-dentaires</title>
+    <title>Hygiène bucco-dentaire</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
-    <!-- Bootstrap core CSS -->
+    <!-- Feuille de style Bootstrap -->
     <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-    <!-- Generic Dentihop stylesheet with font -->
+    <!-- Feuille de style Dentihop avec fonte -->
     <link href="assets/css/dentihop.css" rel="stylesheet">
 
+    <!-- Tables de correspondance pour illustrations -->
+    <script src="/assets/illustrations/table.js"></script>
 
     <style>
       a{
           text-decoration: none !important;
       }
       .dentihop-header{
-          background-color: #b0e0ee;
-          color: white;
+          background-color: #eac928;
+          color: #000;
+          display: flex;
+          align-items: center;
+          font-size: 1.3em;
       }
       .zone{
         margin-top: 5%;
+        padding-left: 10%;
       }
     </style>
-    <!-- Custom styles for this template -->
-    <link href="album.css" rel="stylesheet">
+
   </head>
   <body style="background-color: #fff">
 
@@ -39,49 +43,95 @@
         <div class="container">
           <div class="row">
             <div class="col-3" style="padding-left: 0px;">
-              <a href="menu.html" class="navbar-brand d-flex align-items-center">
+              <a href="menu.html" id="back" class="navbar-brand d-flex align-items-center">
                 <h1 style="padding-right: 0.3em;color:#000;"><</h1>
-                <img class="image-fluid" width="80%" src="assets/images/logo-noir.png">
+                <img class="image-fluid" width="80%" src="assets/illustrations/logo-noir.png">
               </a>
             </div>
-            <div class="col-7">
-              Hygiène bucco-dentaire à la maison
+            <div class="col-7" id="title">
+              Soins au cabinet dentaire
             </div>
           </div>
         </div>
       </div>
     </header>
 
-<main role="main">
-
-    <div class="container" style="margin-top: 5%">
-
-        <div class="row zone">
-          <div class="col-5">
-            <img src="assets/images/robinet.jpg" width="100%">
-          </div>
-          <div class="col-7">
-            texte
-          </div>
-        </div>
-      </a>
-
+<main role="main" id="main">
 
 </main>
 
-
+<script src="assets/js/dentihop.js"></script>
 
 <script>
-window.onload = function(){
-    var w = window.innerWidth,
-        fontSize = parseInt(w * 0.06) + "px"
-    for(const item of document.querySelectorAll(".col-9")){
-        item.style.fontSize = fontSize
-    }
+var main = document.getElementById("main")
+
+// Crée la zone de rendu
+var album = document.createElement("div")
+album.setAttribute("class", "album bg-light")
+main.appendChild(album)
+
+// Crée le conteneur
+var container = document.createElement("div")
+container.setAttribute("class", "container")
+album.appendChild(container)
+
+// Zone d'explication
+var expl = document.createElement("div")
+expl.setAttribute("class", "row")
+main.appendChild(expl)
+for(const text of ["Avec quoi ?", "Ca ressemble à quoi ?"]){
+  var cell = document.createElement("div")
+  cell.setAttribute("class", "col-6")
+  cell.appendChild(document.createTextNode(text))
+  expl.appendChild(cell)
+}
+
+// Mode de navigation (picto ou photo) d'après le cookie
+var navig = navig_mode() || "photo",
+    dossier1 = hygiene.dossier || item,
+    dossier2 = navig == "photo" ? "photographies" : "pictogrammes",
+    dossier = dossier1 + "/" + dossier2,
+    fichiers = hygiene[dossier2],
+    libelle,
+    vrai,
+    meta
+
+// Images
+for(const fichier of fichiers){
+    [libelle, vrai, meta] = fichier
+    var row = document.createElement("div")
+    row.setAttribute("class", "row")
+    main.appendChild(row)
+
+    // colonne de gauche : vraie image / picto
+    var col1 = document.createElement("div")
+    col1.setAttribute("class", "col-6")
+    row.appendChild(col1)
+    col1.appendChild(document.createTextNode(libelle))
+    col1.appendChild(document.createElement("br"))
+    var img_vrai = document.createElement("img")
+    img_vrai.setAttribute("width", "80%")
+    img_vrai.setAttribute("src", "/assets/illustrations/" + dossier +
+        "/" + vrai)
+    col1.appendChild(img_vrai)
+
+    // colonne de droite : métaphore
+    var col2 = document.createElement("div")
+    col2.setAttribute("class", "col-6")
+    row.appendChild(col2)
+    col2.appendChild(document.createTextNode("métaphore " + libelle))
+    col2.appendChild(document.createElement("br"))
+    var img_meta = document.createElement("img")
+    img_meta.setAttribute("width", "80%")
+    img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
+        "/" + meta)
+    col2.appendChild(img_meta)
 }
 </script>
+
 </body>
 </html>
+
 
 
 
