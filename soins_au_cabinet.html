@@ -11,7 +11,7 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
 
     <!-- Feuille de style Bootstrap -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <!-- Feuille de style Dentihop avec fonte -->
     <link href="assets/css/dentihop.css" rel="stylesheet">
 
@@ -150,8 +150,7 @@ if(elts.length == 1){
       var col2 = document.createElement("div")
       col2.setAttribute("class", "col-6")
       row.appendChild(col2)
-      col2.appendChild(document.createTextNode("métaphore " + libelle))
-      col2.appendChild(document.createElement("br"))
+      //col2.appendChild(document.createElement("br"))
       var img_meta = document.createElement("img")
       img_meta.setAttribute("width", "80%")
       img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
