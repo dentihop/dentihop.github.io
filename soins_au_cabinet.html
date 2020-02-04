@@ -150,7 +150,8 @@ if(elts.length == 1){
       var col2 = document.createElement("div")
       col2.setAttribute("class", "col-6")
       row.appendChild(col2)
-      //col2.appendChild(document.createElement("br"))
+      col2.appendChild(document.createTextNode(" "))
+      col2.appendChild(document.createElement("br"))
       var img_meta = document.createElement("img")
       img_meta.setAttribute("width", "80%")
       img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
