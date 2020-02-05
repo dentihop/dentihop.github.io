@@ -100,12 +100,24 @@ for(const fichier of fichiers){
     var col0 = document.createElement("div")
     col0.setAttribute("class", "col-1")
     row.appendChild(col0)
+    var col1 = document.createElement("div")
+    col1.setAttribute("class", "col-8")
+    row.appendChild(col1)
+    col1.appendChild(document.createTextNode(libelle))
+
+
+    var row = document.createElement("div")
+    row.setAttribute("class", "row")
+    main.appendChild(row)
+
+    var col0 = document.createElement("div")
+    col0.setAttribute("class", "col-1")
+    row.appendChild(col0)
 
     // colonne de gauche : vraie image / picto
     var col1 = document.createElement("div")
     col1.setAttribute("class", "col-8")
     row.appendChild(col1)
-    col1.appendChild(document.createTextNode(libelle))
     col1.appendChild(document.createElement("br"))
     var img_vrai = document.createElement("img")
     img_vrai.setAttribute("width", "80%")
