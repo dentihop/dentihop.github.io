@@ -134,7 +134,7 @@ if(elts.length == 1){
 
       // colonne de gauche : vraie image / picto
       var col1 = document.createElement("div")
-      col1.setAttribute("class", "col-9")
+      col1.setAttribute("class", "col-8")
       row.appendChild(col1)
       col1.appendChild(document.createTextNode(libelle))
       col1.appendChild(document.createElement("br"))
@@ -144,68 +144,47 @@ if(elts.length == 1){
           "/" + vrai
       col1.appendChild(img_vrai)
       img_vrai.addEventListener("load", function(ev){
-        console.log("vrai height", ev.target)
         var col = ev.target.closest("div"),
             row = col.parentElement
-        console.log("row height", row.style.minHeight)
         if(row.style.minHeight == "" ||
                 (parseInt(row.style.minHeight) < ev.target.clientHeight)){
             row.style.minHeight = ev.target.clientHeight + "px"
-            console.log("set minheight to", row.style.minHeight)
         }
+        ev.target.addEventListener("click", function(ev){
+            var img = ev.target,
+                col_vrai = img.closest("div"),
+                row = col_vrai.parentElement,
+                col_meta = row.childNodes[2]
+            if(col_vrai.className == "col-3"){
+              col_vrai.setAttribute("class", "col-8")
+              col_meta.setAttribute("class", "col-3")
+            }
+          }
+        )
       })
-      // Préchargement de l'image métaphore
-      var col_meta = document.createElement("div")
-      col_meta.style.visibility = "hidden" //setAttribute("class", "col-9")
-      row.appendChild(col_meta)
-      var img_meta = document.createElement("img")
-      img_meta.src = "/assets/illustrations/" + dossier +
-        "/" + meta
-      img_meta.width = "0"
-      col_meta.appendChild(img_meta)
-      var listener = function(ev){
-        console.log("meta height", ev.target.naturalHeight)
-        var col_meta = ev.target.closest("div"),
-            row = col_meta.parentElement,
-            col_vrai = row.childNodes[1],
-            img_vrai = col_vrai.querySelectorAll("img")[0]
-        //console.log("vrai", img_vrai.naturalHeight)
-        //col_meta.style.height = Math.max(img_vrai.naturalHeight,
-        //    img_meta.naturalHeight) + "px"
-        //console.log("set col_meta height", col_meta.style.height)
-      }
-      img_meta.addEventListener("load", listener)
+
       // colonne de droite : métaphore
       var col2 = document.createElement("div")
-      col2.setAttribute("class", "col-2")
+      col2.setAttribute("class", "col-3")
       row.appendChild(col2)
       col2.appendChild(document.createTextNode(" "))
       col2.appendChild(document.createElement("br"))
-      var img_fleche = document.createElement("img")
-      img_fleche.setAttribute("width", "80%")
-      img_fleche.setAttribute("src", "/assets/illustrations/fleche_droite.png")
-      img_fleche.addEventListener("click", function(f){
-        var vrai = f[1],
-            meta = f[2]
-        return function(ev){
-          var fleche = ev.target,
-              col2 = fleche.closest("div"),
-              row = col2.parentElement,
-              col1 = row.childNodes[0],
-              img = row.querySelectorAll("img")[0]
-          console.log("minHeight", row.style.minHeight)
-          if(fleche.style.transform){
-              fleche.style.transform = ""
-              img.src = "/assets/illustrations/" + dossier +
-                "/" + vrai
-          }else{
-            fleche.style.transform="rotate(0.5turn)"
-            img.src = "/assets/illustrations/" + dossier +
-              "/" + meta
+      var img_meta = document.createElement("img")
+      img_meta.setAttribute("width", "80%")
+      img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
+              "/" + meta)
+      img_meta.addEventListener("click", function(ev){
+          var img = ev.target,
+              col_meta = img.closest("div"),
+              row = col_meta.parentElement,
+              col_vrai = row.childNodes[1]
+          if(col_meta.className == "col-3"){
+            col_vrai.setAttribute("class", "col-3")
+            col_meta.setAttribute("class", "col-8")
           }
         }
-      }(fichier))
-      col2.appendChild(img_fleche)
+      )
+      col2.appendChild(img_meta)
   }
 }
 </script>
