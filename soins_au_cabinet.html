@@ -128,9 +128,13 @@ if(elts.length == 1){
       row.setAttribute("class", "row")
       main.appendChild(row)
 
+      var col0 = document.createElement("div")
+      col0.setAttribute("class", "col-1")
+      row.appendChild(col0)
+
       // colonne de gauche : vraie image / picto
       var col1 = document.createElement("div")
-      col1.setAttribute("class", "col-10")
+      col1.setAttribute("class", "col-9")
       row.appendChild(col1)
       col1.appendChild(document.createTextNode(libelle))
       col1.appendChild(document.createElement("br"))
@@ -139,7 +143,38 @@ if(elts.length == 1){
       img_vrai.src = "/assets/illustrations/" + dossier +
           "/" + vrai
       col1.appendChild(img_vrai)
-
+      img_vrai.addEventListener("load", function(ev){
+        console.log("vrai height", ev.target)
+        var col = ev.target.closest("div"),
+            row = col.parentElement
+        console.log("row height", row.style.minHeight)
+        if(row.style.minHeight == "" ||
+                (parseInt(row.style.minHeight) < ev.target.clientHeight)){
+            row.style.minHeight = ev.target.clientHeight + "px"
+            console.log("set minheight to", row.style.minHeight)
+        }
+      })
+      // Préchargement de l'image métaphore
+      var col_meta = document.createElement("div")
+      col_meta.style.visibility = "hidden" //setAttribute("class", "col-9")
+      row.appendChild(col_meta)
+      var img_meta = document.createElement("img")
+      img_meta.src = "/assets/illustrations/" + dossier +
+        "/" + meta
+      img_meta.width = "0"
+      col_meta.appendChild(img_meta)
+      var listener = function(ev){
+        console.log("meta height", ev.target.naturalHeight)
+        var col_meta = ev.target.closest("div"),
+            row = col_meta.parentElement,
+            col_vrai = row.childNodes[1],
+            img_vrai = col_vrai.querySelectorAll("img")[0]
+        //console.log("vrai", img_vrai.naturalHeight)
+        //col_meta.style.height = Math.max(img_vrai.naturalHeight,
+        //    img_meta.naturalHeight) + "px"
+        //console.log("set col_meta height", col_meta.style.height)
+      }
+      img_meta.addEventListener("load", listener)
       // colonne de droite : métaphore
       var col2 = document.createElement("div")
       col2.setAttribute("class", "col-2")
@@ -158,6 +193,7 @@ if(elts.length == 1){
               row = col2.parentElement,
               col1 = row.childNodes[0],
               img = row.querySelectorAll("img")[0]
+          console.log("minHeight", row.style.minHeight)
           if(fleche.style.transform){
               fleche.style.transform = ""
               img.src = "/assets/illustrations/" + dossier +
