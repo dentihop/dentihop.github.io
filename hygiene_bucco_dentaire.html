@@ -49,7 +49,7 @@
               </a>
             </div>
             <div class="col-7" id="title">
-              Soins au cabinet dentaire
+              Hygiène bucco-dentaire
             </div>
           </div>
         </div>
@@ -79,16 +79,10 @@ album.appendChild(container)
 var expl = document.createElement("div")
 expl.setAttribute("class", "row")
 main.appendChild(expl)
-for(const text of ["Avec quoi ?", "Ca ressemble à quoi ?"]){
-  var cell = document.createElement("div")
-  cell.setAttribute("class", "col-6")
-  cell.appendChild(document.createTextNode(text))
-  expl.appendChild(cell)
-}
 
 // Mode de navigation (picto ou photo) d'après le cookie
 var navig = navig_mode() || "photo",
-    dossier1 = hygiene.dossier || item,
+    dossier1 = hygiene.dossier,
     dossier2 = navig == "photo" ? "photographies" : "pictogrammes",
     dossier = dossier1 + "/" + dossier2,
     fichiers = hygiene[dossier2],
@@ -103,28 +97,62 @@ for(const fichier of fichiers){
     row.setAttribute("class", "row")
     main.appendChild(row)
 
+    var col0 = document.createElement("div")
+    col0.setAttribute("class", "col-1")
+    row.appendChild(col0)
+
     // colonne de gauche : vraie image / picto
     var col1 = document.createElement("div")
-    col1.setAttribute("class", "col-6")
+    col1.setAttribute("class", "col-8")
     row.appendChild(col1)
     col1.appendChild(document.createTextNode(libelle))
     col1.appendChild(document.createElement("br"))
     var img_vrai = document.createElement("img")
     img_vrai.setAttribute("width", "80%")
-    img_vrai.setAttribute("src", "/assets/illustrations/" + dossier +
-        "/" + vrai)
+    img_vrai.src = "/assets/illustrations/" + dossier +
+        "/" + vrai
     col1.appendChild(img_vrai)
+    img_vrai.addEventListener("load", function(ev){
+      var col = ev.target.closest("div"),
+          row = col.parentElement
+      if(row.style.minHeight == "" ||
+              (parseInt(row.style.minHeight) < ev.target.clientHeight)){
+          row.style.minHeight = ev.target.clientHeight + "px"
+      }
+      ev.target.addEventListener("click", function(ev){
+          var img = ev.target,
+              col_vrai = img.closest("div"),
+              row = col_vrai.parentElement,
+              col_meta = row.childNodes[2]
+          if(col_vrai.className == "col-3"){
+            col_vrai.setAttribute("class", "col-8")
+            col_meta.setAttribute("class", "col-3")
+          }
+        }
+      )
+    })
 
     // colonne de droite : métaphore
     var col2 = document.createElement("div")
-    col2.setAttribute("class", "col-6")
+    col2.setAttribute("class", "col-3")
     row.appendChild(col2)
-    col2.appendChild(document.createTextNode("métaphore " + libelle))
+    col2.appendChild(document.createTextNode(" "))
     col2.appendChild(document.createElement("br"))
     var img_meta = document.createElement("img")
     img_meta.setAttribute("width", "80%")
     img_meta.setAttribute("src", "/assets/illustrations/" + dossier +
-        "/" + meta)
+            "/" + meta)
+    img_meta.addEventListener("click", function(ev){
+        var img = ev.target,
+            col_meta = img.closest("div"),
+            row = col_meta.parentElement,
+            col_vrai = row.childNodes[1]
+        if(col_meta.className == "col-3"){
+          col_vrai.setAttribute("class", "col-3")
+          col_meta.setAttribute("class", "col-8")
+        }
+      }
+    )
     col2.appendChild(img_meta)
 }
 </script>
