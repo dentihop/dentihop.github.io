@@ -64,7 +64,7 @@ table = {
             ['porte-empreintes', 'porte-empreinte.JPG', 'metaphores/moule à gateau.png']
         ],
         pictogrammes:[
-            ['empreinte', 'empreinte.jpg', 'métaphores/moule a gateau.jpg']
+            ['empreinte', 'porte-empreinte.jpg', 'métaphores/moule a gateau.jpg']
         ]
     },
     Extraction:{
